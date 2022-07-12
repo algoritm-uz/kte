@@ -22,7 +22,7 @@ filterSearch(search, elList)
 elSearchBar.addEventListener('keyup', (evt) => {
   const searchString = evt.target.value
 
-  let hpCharacters = search.filter(row => searchString.toLowerCase() === row.title.slice(0, searchString.length).toLowerCase(), elList.innerHTML = null)
+  let hpCharacters = search.filter(row => row.title.toLowerCase().includes(searchString.toLowerCase()), elList.innerHTML = null)
   // title.toLowerCase().includes()
   elRusult.textContent = hpCharacters.length
   filterSearch(hpCharacters, elList)
